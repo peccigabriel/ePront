@@ -94,7 +94,7 @@ function ListIncident() {
 
               <div className="incidents__button-group">
                 <button
-                  style={{ width: 280 }}
+                  style={{ width: 260 }}
                   className="button"
                   onClick={() => getnamePat(incident.namePat)}>
                   Adicionar Infos
