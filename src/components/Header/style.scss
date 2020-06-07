@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.658);
+
+  &__logo {
+    font-size: 46px;
+  }
+
+  &__welcome {
+    font-size: 20px;
+    width: 260px;
+    margin-left: auto;
+  }
+
+  &__logout {
+    height: 60px;
+    width: 60px;
+    border-radius: 4px;
+    border: 1px solid #bbb6b6;
+    background: transparent;
+    margin-left: 16px;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: rgb(194, 70, 70);
+    }
+  }
+}

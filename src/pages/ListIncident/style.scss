@@ -1,0 +1,30 @@
+.incidents {
+  width: 100%;
+
+  &__ul {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* distanciamento ver/hor de uma li para outra */
+    grid-gap: 24px;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  &__li {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  &__button-group {
+    display: flex;
+    justify-content: space-between;
+
+    button + button {
+      margin-left: 10px;
+    }
+
+  }
+}

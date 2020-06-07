@@ -1,0 +1,44 @@
+.incidents {
+  width: 100%;
+  padding: 0px 16px 0px 16px;
+
+  &__content {
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    h2 {
+      padding-bottom: 12px;
+      padding-left: 8px;
+    }
+  }
+
+  &__input {
+    margin-top: 08px;
+  }
+
+  &__textarea {
+    padding-top: 10px;
+  }
+
+  &__inputgroup {
+    display: flex;
+
+    button + button {
+      margin-left: 10px;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(200, 194, 194);
+      color: #a09797;
+    }
+  }
+
+  &__img {
+    min-width: 480px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+}

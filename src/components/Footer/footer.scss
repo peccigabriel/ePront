@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #697DA7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+
+  &__title {
+    color: #fff;
+    font-size: 18px;
+    margin: 18px auto;
+  }
+}

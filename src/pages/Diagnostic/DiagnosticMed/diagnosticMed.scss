@@ -1,0 +1,52 @@
+.diagnostic {
+  width: 100%;
+  padding: 0 30px;
+  margin: 32px auto;
+
+  &__container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+  }
+
+  &__content {
+    margin: auto;
+  }
+
+  &__img {
+    min-width: 550px;
+    padding-left: 26px;
+    margin: auto;
+  }
+
+  &__ul {
+    margin-top: 16px;
+
+    & strong {
+      font-size: 16px;
+    }
+
+    & p {
+      font-size: 16px;
+    }
+
+    &--title {
+      font-size: 28px;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  &__button {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+
+}
