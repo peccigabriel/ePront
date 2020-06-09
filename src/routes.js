@@ -4,7 +4,6 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 //Importando Pages
-// import Logon from './pages/Logon';
 import Home from './pages/Home';
 import RegisterMed from './pages/RegisterMed';
 import RegisterPat from './pages/RegisterPat';
@@ -14,6 +13,7 @@ import DiagnosticPat from './pages/Diagnostic/DiagnosticPat';
 import DiagnosticMed from './pages/Diagnostic/DiagnosticMed';
 import LogonMed from './pages/Logon/LogonMed';
 import LogonPat from './pages/Logon/LogonPat';
+import LogonAdmin from './pages/Logon/LogonAdmin';
 
 
 //A rota precisa estar dentro de BrowserRouter/Switch assim garantimos que somente uma rota será chamada.
@@ -32,6 +32,7 @@ export default function Routes() {
                 <Route path="/diagnosticmed" exact component={DiagnosticMed} />
                 <Route path="/logonmed" exact component={LogonMed} />
                 <Route path="/logonpat" exact component={LogonPat} />
+                <Route path="/logonadmin" exact component={LogonAdmin} />
             </Switch>
         </BrowserRouter>
     );

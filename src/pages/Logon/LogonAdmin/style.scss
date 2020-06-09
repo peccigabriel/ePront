@@ -1,0 +1,30 @@
+.loginadmin-container {
+  margin: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+
+.loginadmin-container .form {
+  max-width: 350px;
+  width: 100%;
+}
+
+.loginadmin-container input {
+  margin-bottom: 8px;
+}
+
+.loginadmin-container h1 {
+  margin-bottom: 30px;
+  font-size: 3em;
+  color: #1d1d1d;
+}
+
+.loginadmin-container .form h2 {
+  font-size: 2.25em;
+  margin: 10px 05px;
+}

@@ -1,22 +1,37 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Footer from '../../components/Footer';
+import { FiLogIn } from 'react-icons/fi'
+import Swal from 'sweetalert2';
 
-import Sobre1 from "../../public/img/sobre1.jpg";
-import Sobre2 from "../../public/img/sobre2.jpg";
-
-import Produto1 from "../../public/img/produtos1.jpg";
-import Produto2 from "../../public/img/produtos2.jpg";
-import Produto3 from "../../public/img/produtos3.jpg";
+import Sobre1 from "../../public/img/medicals.png";
 
 import './home.css'
 
 function Home() {
+
+  const nameAdmin = localStorage.getItem('adminName');
+  const history = useHistory();
+
+  function handleLogon(e) {
+    e.preventDefault();
+
+    Swal.fire('Hey', 'Por favor, realize o login para continuar!', 'error');
+
+    history.push('/logonadmin');
+  }
+
   return (
     <div>
       <div class="super-infos-bg">
         <div class="super-infos">
-          <p>Seg / Sex - 08:00 às 18:00</p>
-          <a href="#home">+55 15 99172-8601</a>
-          <p>Av. Londres, 460 - Jd Europa - SP</p>
+          <p>TCC: FATEC São Roque</p>
+          <div class="login">
+            <FiLogIn className="icon" size={16} color="#fff" />
+            <Link to="/logonadmin" className="login-text">
+              {nameAdmin ? `Bem-vindo(a) ${nameAdmin}` : "Sign in"}
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -27,138 +42,71 @@ function Home() {
           </div>
           <nav class="menu-nav">
             <ul>
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#produtos">Produtos</a></li>
-              <li><a href="#preco">Preço</a></li>
-              <li><a href="#qualidade">Qualidade</a></li>
+              {nameAdmin
+                ?
+                <ul>
+                  <li><Link to="/registermed" target="_blank">Registrar Médico</Link></li>
+                  <li><Link to="/registerpat" target="_blank">Registrar Paciente</Link></li>
+                </ul>
+                :
+                <ul>
+                  <li><Link onClick={handleLogon}>Registrar Médico</Link></li>
+                  <li><Link onClick={handleLogon}>Registrar Paciente</Link></li>
+                </ul>
+              }
+
             </ul>
           </nav>
         </div>
       </header>
 
-      <h1 class="introducao">Novos valores e <br /> Propriedades do CSS</h1>
+      <h1 class="introducao">ePront <br /> Prontuário Médico</h1>
 
       <section class="sobre" id="sobre">
         <div class="sobre-info">
-          <h1>Sobre</h1>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-        previsão das condições inegavelmente apropriadas objetivos.</p>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-        previsão das condições inegavelmente apropriadas objetivos.</p>
+          <h1>Epront?</h1>
+          <p>O ePront é uma ferramenta desenvolvida em formato de Aplicativo, para auxiliar médicos e pacientes. A ferramenta funciona como um prontuário eletrônico, onde o paciente ou seu responsável consegue ter acesso a dados que correspondem diretamente a saúde do paciente.</p>
+          <p>Com o ePront diminuímos o tempo na rotatividade do processo interno do hospital e garantimos um histórico completo e seguro dos dados e diagnostico do paciente.</p>
         </div>
         <div class="sobre-img">
           <img src={Sobre1} alt="Sobre 1" />
-        </div>
-        <div class="sobre-img">
-          <img src={Sobre2} alt="Sobre 2" />
-        </div>
-      </section>
-
-      <section class="produtos" id="produtos">
-        <h1>Produtos</h1>
-        <div class="produtos-container">
-          <div class="produtos-item purple">
-            <h2>Purple</h2>
-            <img src={Produto1} alt="Prod 1" />
-          </div>
-          <div class="produtos-item pink">
-            <h2>Pink</h2>
-            <img src={Produto2} alt="Prod 2" />
-          </div>
-          <div class="produtos-item blue">
-            <h2>Blue</h2>
-            <img src={Produto3} alt="Prod 3" />
-          </div>
-        </div>
-      </section>
-
-      <section class="preco" id="preco">
-        <div class="preco-item">
-          <h2>Bronze</h2>
-          <span><sup>R$</sup>19</span>
-          <ul>
-            <li>Planos Ilimitados</li>
-            <li>Acesso Restrito</li>
-            <li>Conteúdo Secreto</li>
-            <li>Suporte 24H</li>
-          </ul>
-        </div>
-
-        <div class="preco-item">
-          <h2>Prata</h2>
-          <span><sup>R$</sup>39</span>
-          <ul>
-            <li>Planos Ilimitados</li>
-            <li>Acesso Restrito</li>
-            <li>Conteúdo Secreto</li>
-            <li>Suporte 24H</li>
-            <li>Compra Exclusiva</li>
-          </ul>
-        </div>
-
-        <div class="preco-item">
-          <h2>Ouro</h2>
-          <span><sup>R$</sup>79</span>
-          <ul>
-            <li>Planos Ilimitados</li>
-            <li>Acesso Restrito</li>
-            <li>Conteúdo Secreto</li>
-            <li>Suporte 24H</li>
-            <li>Compra Exclusiva</li>
-            <li>Download dos Itens</li>
-          </ul>
         </div>
       </section>
 
       <section class="qualidade" id="qualidade">
         <div class="qualidade-item">
-          <h2>Inteligente</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-                      previsão.</p>
+          <h2>Agilidade</h2>
+          <p>Sem tempo de espera por informações médicas durante processos médicos</p>
         </div>
 
         <div class="qualidade-item">
-          <h2>Compacto</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-                       previsão das condições inegavelmente</p>
+          <h2>Organização</h2>
+          <p>Melhoramos a organização dos dados e armazenamento dos diagnosticos médicos e dados dos pacientes</p>
         </div>
 
         <div class="qualidade-item">
-          <h2>Ecônomico</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-        previsão</p>
+          <h2>Rotatividade</h2>
+          <p>Diminuição do tempo de espera em toda rotatividade (processo) dentro do hospital</p>
         </div>
 
         <div class="qualidade-item">
-          <h2>Transparente</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-        previsão</p>
+          <h2>Segurança</h2>
+          <p>Armazenamento seguro dos dados, criptografia em todas as requisições, mantendo os dados seguros</p>
         </div>
 
         <div class="qualidade-item">
-          <h2>Opaco</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-        previsão das condições inegavelmente</p>
+          <h2>Eficácia</h2>
+          <p>O uso da plataforma ePront, traz difersos beneficios ao atendimento, melhorando significativamente toda operação hospitalar</p>
         </div>
 
         <div class="qualidade-item">
-          <h2>Sustentável</h2>
-          <p>O que temos que ter sempre em mente é que a determinação clara de objetivos afeta positivamente a correta
-                        previsão </p>
+          <h2>Inclusão</h2>
+          <p>Sabemos que o grupo da terceira idade, utiliza muito os serviços de saúde, então porque não incluí-los
+          digitalmente
+          </p>
         </div>
       </section>
-
-      <section class="newsletter">
-        <div class="newsletter-info">
-          <h2>Newsletter</h2>
-          <p>assine e fique por dentro das novidades</p>
-        </div>
-        <form class="newsletter-form">
-          <input type="text" placeholder="Seu e-mail" />
-          <button type="submit">Assinar</button>
-        </form>
-      </section>
-
+      <Footer />
     </div>
   );
 }
